@@ -1,0 +1,21 @@
+  
+type Query {
+  getPosts: [Post]
+  post(id: ID!): Post
+}
+
+
+type Post {
+  id: Int
+  name: String
+  comments: [Comment]
+  image: String
+  content: String
+
+}
+
+type Comment {
+    id: Int
+    name: String
+    content: String
+}
