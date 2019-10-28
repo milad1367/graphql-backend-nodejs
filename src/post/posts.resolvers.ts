@@ -13,9 +13,7 @@ export class PostsResolvers {
   }
 
   @Query('post')
-  async findOneById(
-    @Args('id', ParseIntPipe)
-    id: number,
+  async findOneById(@Args('id') id: string,
   ): Promise<Post> {
     return await this.postsService.findOneById(id);
   }

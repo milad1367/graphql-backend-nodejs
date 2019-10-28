@@ -9,14 +9,16 @@ export class Comment {
     id?: number;
     name?: string;
     content?: string;
+    avatar?: string;
 }
 
 export class Post {
-    id?: number;
+    id?: string;
     name?: string;
     comments?: Comment[];
     image?: string;
     content?: string;
+    avatar?: string;
 }
 
 export abstract class IQuery {
