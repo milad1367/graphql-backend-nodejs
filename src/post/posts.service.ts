@@ -1,14 +1,20 @@
+import * as mongoose from 'mongoose';
+import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { Post } from '../graphql';
 import data from '../data';
 @Injectable()
 export class PostsService {
-  private readonly posts: Post[] = data;
-  findAll(): Post[] {
-    return this.posts;
+  constructor(@InjectModel('Post') private readonly postModel: Model<Post>) {}
+  async findAll(): Promise<Post[]> {
+    return await this.postModel.find().exec();
   }
 
-  findOneById(id: number): Post {
-    return this.posts.find(post => post.id === id);
+  async findOneById(id: string): Promise <Post> {
+    const post = await this.postModel
+    .findById(mongoose.Types.ObjectId(id))
+    .exec();
+    return post;
   }
 }

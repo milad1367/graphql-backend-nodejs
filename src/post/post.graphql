@@ -6,12 +6,12 @@ type Query {
 
 
 type Post {
-  id: Int
+  id: String
   name: String
   comments: [Comment]
   image: String
   content: String
-
+  avatar: String
 }
 
 
@@ -19,4 +19,5 @@ type Comment {
     id: Int
     name: String
     content: String
+    avatar: String
 }
