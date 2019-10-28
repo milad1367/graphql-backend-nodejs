@@ -1,13 +1,8 @@
 
-## Installation
-
-```bash
-$ yarn install
-```
 
 ## Running the app
 
 ```bash
-# development
+$ yarn install
 $ yarn start
 ```
