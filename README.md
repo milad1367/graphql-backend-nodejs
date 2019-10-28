@@ -1,6 +1,8 @@
 
+# graphql-backend-nodejs
 
-## Running the app
+
+### Running the app
 
 ```bash
 $ yarn install
